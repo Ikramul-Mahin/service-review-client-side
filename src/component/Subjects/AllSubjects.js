@@ -6,9 +6,9 @@ const AllSubjects = () => {
     const allsubjects = useLoaderData()
     return (
         <div>
-            <h2>{allsubjects.length}</h2>
+            <h2 className='text-4xl my-10 text-center'>All Subjects</h2>
 
-            <div>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 ml-14'>
                 {
                     allsubjects.map(allSubject => <AllsubjectCard
                         key={allSubject._id}

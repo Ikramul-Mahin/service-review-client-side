@@ -4,7 +4,9 @@ import Home from "../component/Home/Home";
 import Login from "../component/Login/Login";
 import Main from "../component/Main/Main";
 import Register from "../component/Register/Register";
+import AllSubjectCardDetails from "../component/Subjects/AllSubjectCardDetails";
 import Subjects from "../component/Subjects/AllSubjects";
+import SubjectCardDetails from "../component/Subjects/SubjectCardDetails";
 
 
 export const router = createBrowserRouter([
@@ -32,7 +34,18 @@ export const router = createBrowserRouter([
                 path: '/allsubjects',
                 element: <Subjects></Subjects>,
                 loader: () => fetch('http://localhost:5000/allsubjects')
+            },
+            {
+                path: '/subjects/:id',
+                element: <SubjectCardDetails></SubjectCardDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/subjects/${params.id}`)
+            },
+            {
+                path: '/allsubjects/:id',
+                element: <AllSubjectCardDetails></AllSubjectCardDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allsubjects/${params.id}`)
             }
+
         ]
     }
 ])

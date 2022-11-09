@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../asset/pngwing.com.png'
+import { AuthContext } from '../../context/AuthProvider';
 
 const Header = () => {
+    const { user, userSignOut } = useContext(AuthContext)
+    const handleSignOut = () => {
+        userSignOut()
+            .then(() => { })
+            .catch(err => console.error(err))
+    }
     return (
         <div>
             <div className="navbar bg-primary text-primary-content">
@@ -33,9 +40,18 @@ const Header = () => {
                     <ul className="menu menu-horizontal p-0">
                         <li> <Link to='/'><button className="btn btn-active ">Home</button> </Link> </li>
                         <li> <Link to='/blog'><button className="btn btn-active ">Blog</button> </Link> </li>
-                        <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>
-                        <li> <Link to='/register'><button className="btn btn-active ">Register</button> </Link> </li>
-                        <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>
+                        {
+                            user?.email ?
+                                <>
+                                    <li> <button onClick={handleSignOut} className="btn btn-active ">Log Out</button> </li>
+                                </> :
+                                <>
+                                    <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>
+                                    <li> <Link to='/register'><button className="btn btn-active ">Register</button> </Link> </li>
+                                </>
+                        }
+
+
 
 
 
