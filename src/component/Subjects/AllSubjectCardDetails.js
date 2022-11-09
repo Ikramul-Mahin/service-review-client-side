@@ -1,8 +1,15 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import ReviewTable from '../Review/ReviewTable';
 
 const AllSubjectCardDetails = () => {
     const allDetails = useLoaderData()
+    const [reviews, setReviews] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
     return (
         <div>
             <div className='flex justify-center'>
@@ -18,8 +25,28 @@ const AllSubjectCardDetails = () => {
                             <div className="badge text-lg p-5 badge-primary">Price:${allDetails.price}</div>
                             <div className="badge text-lg p-5 badge-primary">Ratings {allDetails.rating}</div>
                         </div>
+                        <div className='text-center'>
+                            <Link to='/addReview'>
+                                <button className='btn btn-primary'>Add A Review</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+
+            <div>
+                <h2 className='text-center my-5 text-4xl'>Reviews Of This Subject</h2>
+                <div>
+
+                </div>
+                {
+                    reviews.map(review => <ReviewTable
+                        key={review._id}
+                        review={review}
+                    ></ReviewTable>)
+                }
+
             </div>
         </div>
     );

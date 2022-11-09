@@ -43,7 +43,8 @@ const Header = () => {
                         {
                             user?.email ?
                                 <>
-                                    <li> <button onClick={handleSignOut} className="btn btn-active ">Log Out</button> </li>
+                                    <li><Link> <button onClick={handleSignOut} className="btn btn-active ">Log Out</button></Link> </li>
+                                    <li> <Link to='/myReview'><button className="btn btn-active ">My Review</button> </Link> </li>
                                 </> :
                                 <>
                                     <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>

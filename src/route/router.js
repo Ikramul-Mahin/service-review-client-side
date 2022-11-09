@@ -4,6 +4,8 @@ import Home from "../component/Home/Home";
 import Login from "../component/Login/Login";
 import Main from "../component/Main/Main";
 import Register from "../component/Register/Register";
+import AddReview from "../component/Review/AddReview";
+import MyReview from "../component/Review/MyReview";
 import AddService from "../component/Subjects/AddService";
 import AllSubjectCardDetails from "../component/Subjects/AllSubjectCardDetails";
 import Subjects from "../component/Subjects/AllSubjects";
@@ -49,6 +51,14 @@ export const router = createBrowserRouter([
             {
                 path: '/addService',
                 element: <AddService></AddService>
+            },
+            {
+                path: '/addReview',
+                element: <AddReview></AddReview>
+            },
+            {
+                path: '/myReview',
+                element: <MyReview></MyReview>
             }
 
         ]

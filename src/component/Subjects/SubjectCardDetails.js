@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const SubjectCardDetails = () => {
     const cardDetails = useLoaderData()
@@ -16,6 +16,11 @@ const SubjectCardDetails = () => {
                     <div className="card-actions justify-start my-4">
                         <div className="badge text-lg p-5 badge-primary">Price:${cardDetails.price}</div>
                         <div className="badge text-lg p-5 badge-primary">Ratings {cardDetails.rating}</div>
+                    </div>
+                    <div className='text-center'>
+                        <Link to='/addReview'>
+                            <button className='btn btn-primary'>Add A Review</button>
+                        </Link>
                     </div>
                 </div>
             </div>
