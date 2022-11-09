@@ -4,6 +4,7 @@ import Home from "../component/Home/Home";
 import Login from "../component/Login/Login";
 import Main from "../component/Main/Main";
 import Register from "../component/Register/Register";
+import AddService from "../component/Subjects/AddService";
 import AllSubjectCardDetails from "../component/Subjects/AllSubjectCardDetails";
 import Subjects from "../component/Subjects/AllSubjects";
 import SubjectCardDetails from "../component/Subjects/SubjectCardDetails";
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
                 path: '/allsubjects/:id',
                 element: <AllSubjectCardDetails></AllSubjectCardDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allsubjects/${params.id}`)
+            },
+            {
+                path: '/addService',
+                element: <AddService></AddService>
             }
 
         ]

@@ -48,6 +48,8 @@ const Header = () => {
                                 <>
                                     <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>
                                     <li> <Link to='/register'><button className="btn btn-active ">Register</button> </Link> </li>
+                                    <li> <Link to='/addService'><button className="btn btn-active ">Add Service</button> </Link> </li>
+
                                 </>
                         }
 

@@ -4,7 +4,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const SubjectCard = ({ subject }) => {
-    const { _id, topic, img, price, rating, text } = subject
+    const { _id, topic, img, price, text } = subject
     return (
         <div className='w-full my-10'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -20,6 +20,8 @@ const SubjectCard = ({ subject }) => {
                 </PhotoProvider>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{topic}</h2>
+                    <h2 className='text-lg font-semibold'>Price:${price}</h2>
+
                     <p>{text.slice(0, 100)}</p>
                     <div className="card-actions">
                         <Link to={`/subjects/${_id}`}>
