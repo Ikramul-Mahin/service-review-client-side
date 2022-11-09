@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import { FaBeer, FaGoogle } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 const Login = () => {
     const { loginUser, signWithGoggle } = useContext(AuthContext)
     const handleLogin = event => {
@@ -14,6 +16,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                toast.success('successfully login')
+                form.reset()
 
             })
             .catch(error => console.error(error))
@@ -52,7 +56,8 @@ const Login = () => {
                             </div>
                             <Link to='/register'>Please Register</Link>
                             <div className='btn outline bg-primary'>
-                                <button onClick={handleGoggle}>Log In With Goggle</button>
+                                <FaGoogle />
+                                <button className='mx-3' onClick={handleGoggle}> Log In With Goggle</button>
                             </div>
                         </div>
                     </div>

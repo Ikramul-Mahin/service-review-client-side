@@ -34,7 +34,7 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    <a className="btn btn-ghost normal-case text-xl"> <img className='w-10 bg-white text-white rounded-lg' src={logo} alt="" />   Super | Tutor</a>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl"> <img className='w-10 bg-white text-white rounded-lg' src={logo} alt="" />   Super | Tutor</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
