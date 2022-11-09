@@ -4,6 +4,7 @@ import Home from "../component/Home/Home";
 import Login from "../component/Login/Login";
 import Main from "../component/Main/Main";
 import Register from "../component/Register/Register";
+import Subjects from "../component/Subjects/AllSubjects";
 
 
 export const router = createBrowserRouter([
@@ -26,6 +27,11 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/allsubjects',
+                element: <Subjects></Subjects>,
+                loader: () => fetch('http://localhost:5000/allsubjects')
             }
         ]
     }

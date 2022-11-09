@@ -2,7 +2,7 @@ import React from 'react';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Galary from '../Galary/Galary';
-import Service from '../Service/Service';
+import Service from '../Subjects/Service';
 
 const Home = () => {
     return (
