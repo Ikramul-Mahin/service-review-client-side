@@ -20,7 +20,7 @@ const About = () => {
 
 
                         <h1 className="text-5xl font-bold">Mahin Islam</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <p className="py-6">I am student of Science background. I love to teach students. I take good Care of my students. I make them confident and qualified. </p>
 
                     </div>
                 </div>

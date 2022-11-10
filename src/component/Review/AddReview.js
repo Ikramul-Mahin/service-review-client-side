@@ -58,7 +58,7 @@ const AddReview = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
                     <form onSubmit={handleAddReview} className="card flex-shrink-0 w-96  shadow-2xl bg-base-100">
-                        <h2 className='text-4xl'>Add Review of :{subject.topic}</h2>
+                        <h2 className='text-4xl'>Add Review </h2>
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">

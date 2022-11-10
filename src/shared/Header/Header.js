@@ -19,22 +19,22 @@ const Header = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52">
-                            <li> <Link to='/'><button className="btn btn-active ">Home</button> </Link> </li>
-                            <li> <Link to='/blog'><button className="btn btn-active ">Blog</button> </Link> </li>
+                            <li> <Link to='/'><button className="btn btn-outline btn-warning">Home</button> </Link> </li>
+                            <li> <Link to='/blog'><button className="btn btn-outline btn-warning">Blog</button> </Link> </li>
 
                             {
                                 user?.email ?
-                                    <> <li> <Link to='/myReview'><button className="btn btn-active ">My Review</button> </Link> </li>
-                                        <li> <Link to='/addService'><button className="btn btn-active ">Add Service</button> </Link> </li>
-                                        <li><Link> <button onClick={handleSignOut} className="btn btn-active ">Log Out</button></Link> </li>
+                                    <> <li> <Link to='/myReview'><button className="btn btn-outline btn-warning">My Review</button> </Link> </li>
+                                        <li> <Link to='/addService'><button className="btn btn-outline btn-warning">Add Service</button> </Link> </li>
+                                        <li><Link> <button onClick={handleSignOut} className="btn btn-outline btn-warning">Log Out</button></Link> </li>
                                     </> :
                                     <>
-                                        <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>
-                                        <li> <Link to='/register'><button className="btn btn-active ">Register</button> </Link> </li>
-                                        <li> <Link to='/reviews'><button className="btn btn-active ">Reviews</button> </Link> </li>
-
+                                        <li> <Link to='/login'><button className="btn btn-outline btn-warning">Login</button> </Link> </li>
+                                        <li> <Link to='/register'><button className="btn btn-outline btn-warning">Register</button> </Link> </li>
+                                        <li> <Link to='/reviews'><button className="btn btn-outline btn-warning ">Reviews</button> </Link> </li>
                                     </>
                             }
+
 
 
 
@@ -45,19 +45,19 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li> <Link to='/'><button className="btn outline-zinc-100 ">Home</button> </Link> </li>
-                        <li> <Link to='/blog'><button className="btn  ">Blog</button> </Link> </li>
+                        <li> <Link to='/'><button className="btn btn-outline btn-warning">Home</button> </Link> </li>
+                        <li> <Link to='/blog'><button className="btn btn-outline btn-warning">Blog</button> </Link> </li>
 
                         {
                             user?.email ?
-                                <> <li> <Link to='/myReview'><button className="btn btn-active ">My Review</button> </Link> </li>
-                                    <li> <Link to='/addService'><button className="btn btn-active ">Add Service</button> </Link> </li>
-                                    <li><Link> <button onClick={handleSignOut} className="btn btn-active ">Log Out</button></Link> </li>
+                                <> <li> <Link to='/myReview'><button className="btn btn-outline btn-warning">My Review</button> </Link> </li>
+                                    <li> <Link to='/addService'><button className="btn btn-outline btn-warning">Add Service</button> </Link> </li>
+                                    <li><Link> <button onClick={handleSignOut} className="btn btn-outline btn-warning">Log Out</button></Link> </li>
                                 </> :
                                 <>
-                                    <li> <Link to='/login'><button className="btn btn-active ">Login</button> </Link> </li>
-                                    <li> <Link to='/register'><button className="btn btn-active ">Register</button> </Link> </li>
-                                    <li> <Link to='/reviews'><button className="btn btn-active ">Reviews</button> </Link> </li>
+                                    <li> <Link to='/login'><button className="btn btn-outline btn-warning">Login</button> </Link> </li>
+                                    <li> <Link to='/register'><button className="btn btn-outline btn-warning">Register</button> </Link> </li>
+                                    <li> <Link to='/reviews'><button className="btn btn-outline btn-warning ">Reviews</button> </Link> </li>
                                 </>
                         }
 

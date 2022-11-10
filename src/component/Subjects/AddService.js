@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AddService = () => {
     const handleAddservice = event => {
@@ -29,6 +30,7 @@ const AddService = () => {
 
                 console.log(data)
                 if (data.acknowledged) {
+                    toast.success('successfully added a subject')
                     form.reset()
                 }
             })
@@ -38,7 +40,7 @@ const AddService = () => {
     }
     return (
         <div className='text-center'>
-            <h2 className='text-3xl'>Add A Service</h2>
+            <h2 className='text-3xl'>Add A Subject</h2>
             <form onSubmit={handleAddservice}>
 
                 <div className='grid grid-cols-1 mx-40'>
