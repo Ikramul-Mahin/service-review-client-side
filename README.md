@@ -1,19 +1,21 @@
 # Getting Started with My Assignment Project
 
+## About Me
+#### My name is Mahiin. I am a student. I love to learn new things. Thats why i have joined pogramming hero's course. It is one of the best place of learning. They have crate a good learning Environment.
 
 ## Features and Functionalities 
-# 1. User Registration.
-# 2. User Log In 
-# 3. User Review Section 
-# 4. After login redirect to route
-# 3. Slider Galary
+### 1. User Registration.
+### 2. User Log In 
+### 3. User Review Section 
+### 4. After login redirect to route
+### 3. Slider Galary
 
 ## Used Tools and Sites 
-# 1. VS Code .
-# 2. Daisu ui
-# 3. Firebase.
-# 4. React router.
-# 5. React Toast
+### 1. VS Code .
+### 2. Daisu ui
+### 3. Firebase.
+### 4. React router.
+### 5. React Toast
 
 
 
