@@ -38,17 +38,17 @@ export const router = createBrowserRouter([
             {
                 path: '/allsubjects',
                 element: <Subjects></Subjects>,
-                loader: () => fetch('http://localhost:5000/allsubjects')
+                loader: () => fetch('https://assignment-server-11-flax.vercel.app/allsubjects')
             },
             {
                 path: '/subjects/:id',
                 element: <SubjectCardDetails></SubjectCardDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/subjects/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-server-11-flax.vercel.app/subjects/${params.id}`)
             },
             {
                 path: '/allsubjects/:id',
                 element: <AllSubjectCardDetails></AllSubjectCardDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allsubjects/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-server-11-flax.vercel.app/allsubjects/${params.id}`)
             },
             {
                 path: '/addService',

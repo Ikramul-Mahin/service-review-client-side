@@ -6,7 +6,7 @@ const Service = () => {
     const [subjects, setSubjects] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/subjects')
+        fetch('https://assignment-server-11-flax.vercel.app/subjects')
             .then(res => res.json())
             .then(data => setSubjects(data))
     }, [])

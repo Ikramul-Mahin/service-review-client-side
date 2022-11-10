@@ -8,7 +8,7 @@ const MyReview = () => {
     const [myreview, setmyReview] = useState([])
     useTitle('my-Review')
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://assignment-server-11-flax.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setmyReview(data))
     }, [user?.email])

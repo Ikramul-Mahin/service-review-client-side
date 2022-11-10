@@ -4,9 +4,10 @@ import ReviewTable from '../Review/ReviewTable';
 
 const SubjectCardDetails = () => {
     const cardDetails = useLoaderData()
+    const { img } = cardDetails
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://assignment-server-11-flax.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -15,7 +16,7 @@ const SubjectCardDetails = () => {
         <div className=''>
             <div className='flex justify-center'>
                 <div className="card md:w-6/12 sm:w-6/12  bg-base-100 shadow-xl mx-20 my-12">
-                    <img className='h-96' src={cardDetails.img} alt="Shoes" />
+                    <img className='h-96' src={img} alt="Shoes" />
                     <div className="card-body">
                         <h2 className="card-title text-2xl">
                             {cardDetails.topic}

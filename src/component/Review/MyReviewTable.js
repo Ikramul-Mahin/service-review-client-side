@@ -5,7 +5,7 @@ const MyReviewTable = ({ review }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure u want to confirm!')
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://assignment-server-11-flax.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

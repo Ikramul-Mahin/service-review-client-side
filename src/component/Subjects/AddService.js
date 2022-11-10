@@ -17,7 +17,7 @@ const AddService = () => {
             img,
             text
         }
-        fetch('http://localhost:5000/subject', {
+        fetch('https://assignment-server-11-flax.vercel.app/subject', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

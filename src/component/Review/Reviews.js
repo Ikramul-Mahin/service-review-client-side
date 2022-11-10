@@ -4,7 +4,7 @@ import ReviewTable from './ReviewTable';
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://assignment-server-11-flax.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

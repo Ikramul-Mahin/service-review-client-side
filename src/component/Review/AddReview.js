@@ -7,7 +7,7 @@ const AddReview = () => {
     const [subject, setSubject] = useState([])
     useTitle('Add-Review')
     useEffect(() => {
-        fetch('http://localhost:5000/allsubjects')
+        fetch('https://assignment-server-11-flax.vercel.app/allsubjects')
             .then(res => res.json())
             .then(data => {
                 console.log(data[0].topic)
@@ -35,7 +35,7 @@ const AddReview = () => {
             rating,
             text
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://assignment-server-11-flax.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
