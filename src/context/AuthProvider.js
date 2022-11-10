@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     const signWithGoggle = () => {
         signInWithPopup(auth, googleProvider)
+        setLoading(true)
     }
     const upadateUserProfile = (profile) => {
         return updateProfile(auth.currentUser, profile)

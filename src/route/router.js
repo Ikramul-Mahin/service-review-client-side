@@ -10,6 +10,7 @@ import AddService from "../component/Subjects/AddService";
 import AllSubjectCardDetails from "../component/Subjects/AllSubjectCardDetails";
 import Subjects from "../component/Subjects/AllSubjects";
 import SubjectCardDetails from "../component/Subjects/SubjectCardDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -58,7 +59,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/myReview',
-                element: <MyReview></MyReview>
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
             }
 
         ]

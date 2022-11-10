@@ -1,11 +1,25 @@
 import React from 'react';
 
-const ReviewTable = ({ review }) => {
+const MyReviewTable = ({ review }) => {
+    const { _id, img, rating, text, name } = review
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure u want to confirm!')
+        if (proceed) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .thne(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+
+    }
     return (
         <div className="overflow-x-auto w-full my-5">
             <table className="table w-full">
 
-                {/* <thead>
+                <thead>
                     <tr>
                         <th>
 
@@ -16,16 +30,15 @@ const ReviewTable = ({ review }) => {
                         <th></th>
 
                     </tr>
-                </thead> */}
+                </thead>
                 <tbody>
 
                     <tr>
                         <th>
-                            <label>
-                                <button className='btn btn-ghost'> x</button>
+                            <label >
+                                <button onClick={() => { handleDelete(review) }} >X</button>
                             </label>
                         </th>
-
                         <td>
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
@@ -55,4 +68,4 @@ const ReviewTable = ({ review }) => {
     );
 };
 
-export default ReviewTable;
+export default MyReviewTable;

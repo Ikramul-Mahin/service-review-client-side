@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../context/AuthProvider';
 
 const AddReview = () => {
+    const [subject, setSubject] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/allsubjects')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data[0].topic)
+                setSubject(data)
+            })
+    }, [])
+
+
+    const { user } = useContext(AuthContext)
     const handleAddReview = event => {
         event.preventDefault()
         const form = event.target
         const name = form.name.value
         const img = form.img.value
+        const email = user?.email || 'unregistered'
         const rating = form.rating.value
         const text = form.text.value
-        console.log(name, img, text, rating)
+        console.log(name, img, text, rating, email)
 
         const review = {
+
+            email,
             name,
             img,
             rating,
@@ -40,13 +56,19 @@ const AddReview = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
                     <form onSubmit={handleAddReview} className="card flex-shrink-0 w-96  shadow-2xl bg-base-100">
-                        <h2 className='text-4xl'>Add Review</h2>
+                        <h2 className='text-4xl'>Add Review of :{subject.topic}</h2>
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="text" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 const Login = () => {
     const { loginUser, signWithGoggle } = useContext(AuthContext)
+    let location = useLocation()
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || "/";
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target
@@ -17,6 +20,7 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 toast.success('successfully login')
+                navigate(from, { replace: true })
                 form.reset()
 
             })
