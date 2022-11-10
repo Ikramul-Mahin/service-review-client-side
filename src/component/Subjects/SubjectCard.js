@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import ReviewTable from '../Review/ReviewTable';
 
 const SubjectCard = ({ subject }) => {
     const { _id, topic, img, price, text } = subject
+
     return (
         <div className='w-full my-10'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -30,6 +32,8 @@ const SubjectCard = ({ subject }) => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

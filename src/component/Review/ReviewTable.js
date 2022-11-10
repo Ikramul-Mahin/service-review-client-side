@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const ReviewTable = ({ review }) => {
+    const { _id, img, rating, text, name } = review
+    const [orders, setOrders] = useState([])
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure u want to confirm!')
+        if (proceed) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        toast.success('deleted successfully')
+                        const remaining = orders.filter(odr => odr._id !== id)
+                        setOrders(remaining)
+                    }
+                })
+        }
+
+    }
     return (
         <div className="overflow-x-auto w-full my-5">
             <table className="table w-full">
-
-                {/* <thead>
-                    <tr>
-                        <th>
-
-                        </th>
-                        <th>Name</th>
-                        <th>Rating</th>
-                        <th>Review</th>
-                        <th></th>
-
-                    </tr>
-                </thead> */}
                 <tbody>
 
                     <tr>
                         <th>
-                            <label>
-                                <button className='btn btn-ghost'> x</button>
+                            <label >
+                                <button onClick={() => { handleDelete(_id) }} >X</button>
                             </label>
                         </th>
 

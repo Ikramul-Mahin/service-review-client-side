@@ -36,10 +36,11 @@ const AllSubjectCardDetails = () => {
 
 
             <div>
-                <h2 className='text-center my-5 text-4xl'>Reviews Of This Subject</h2>
+
                 <div>
 
                 </div>
+                <h2 className='text-center text-4xl my-8'>Students Review</h2>
                 {
                     reviews.map(review => <ReviewTable
                         key={review._id}

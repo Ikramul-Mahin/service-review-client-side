@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 
 const AddReview = () => {
     const [subject, setSubject] = useState([])
+    useTitle('Add-Review')
     useEffect(() => {
         fetch('http://localhost:5000/allsubjects')
             .then(res => res.json())

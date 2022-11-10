@@ -3,9 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { FaBeer, FaGoogle } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import useTitle from '../../Hook/useTitle';
 const Login = () => {
     const { loginUser, signWithGoggle } = useContext(AuthContext)
     let location = useLocation()
+    useTitle('login')
     const navigate = useNavigate()
     let from = location.state?.from?.pathname || "/";
     const handleLogin = event => {

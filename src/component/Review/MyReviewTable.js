@@ -8,7 +8,7 @@ const MyReviewTable = ({ review }) => {
             fetch(`http://localhost:5000/reviews/${id}`, {
                 method: 'DELETE'
             })
-                .thne(res => res.json())
+                .then(res => res.json())
                 .then(data => {
                     console.log(data)
                 })
@@ -36,7 +36,7 @@ const MyReviewTable = ({ review }) => {
                     <tr>
                         <th>
                             <label >
-                                <button onClick={() => { handleDelete(review) }} >X</button>
+                                <button onClick={() => { handleDelete(_id) }} >X</button>
                             </label>
                         </th>
                         <td>
